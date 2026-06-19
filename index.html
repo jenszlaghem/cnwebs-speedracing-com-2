@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速赛车 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #faf9f7;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            color: #2d2a26;
+            line-height: 1.7;
+            padding: 0 1.2rem;
+        }
+
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.4rem 0 3rem 0;
+        }
+
+        /* ---------- hero ---------- */
+        .hero {
+            padding: 3.2rem 1.5rem 2.2rem 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid #e1dbd1;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #2b231e;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .subline {
+            font-size: 1rem;
+            color: #736b63;
+            border-top: 1px dashed #d3cbc0;
+            display: inline-block;
+            padding-top: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 1.4rem auto 0 auto;
+            font-size: 1.05rem;
+            color: #4c443c;
+        }
+
+        /* ---------- section 通用 ---------- */
+        section {
+            padding: 2rem 1.5rem;
+            border-bottom: 1px solid #ece6de;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-weight: 450;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2f2822;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-weight: 400;
+            font-size: 1.15rem;
+            margin: 1.2rem 0 0.4rem 0;
+            color: #3d342e;
+        }
+
+        p {
+            margin: 0 0 1rem 0;
+        }
+
+        /* ---------- 提示框 / 引用块 ---------- */
+        .notice-box {
+            background: #f2ede6;
+            border-left: 6px solid #b7a086;
+            padding: 1.2rem 1.6rem;
+            margin: 1.5rem 0 1rem 0;
+            border-radius: 0 12px 12px 0;
+            font-size: 0.98rem;
+        }
+
+        .notice-box strong {
+            color: #5e4c36;
+        }
+
+        .quote-block {
+            background: #f6f2ec;
+            padding: 0.9rem 1.5rem;
+            border-radius: 20px 6px 20px 6px;
+            font-style: italic;
+            color: #4f453b;
+            margin: 1.8rem 0;
+            border: 1px solid #ddd6cb;
+        }
+
+        .quote-block cite {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+            color: #7f7266;
+        }
+
+        /* ---------- FAQ 摘要 ---------- */
+        .faq-item {
+            margin: 0.8rem 0 1.2rem 0;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            border-bottom: 1px dotted #cdc2b4;
+            padding-bottom: 0.15rem;
+            margin-bottom: 0.35rem;
+            color: #3d322b;
+        }
+
+        .faq-item .a {
+            color: #504840;
+            font-size: 0.97rem;
+            padding-left: 0.6rem;
+        }
+
+        /* ---------- 特点卡片组 ---------- */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        .feature-card {
+            background: #fdfbf9;
+            border: 1px solid #e5ddd1;
+            padding: 1.2rem 1rem 1rem 1rem;
+            border-radius: 16px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .feature-card .num {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #947c63;
+            margin-bottom: 0.3rem;
+            border-bottom: 2px solid #dacfc1;
+            padding-bottom: 0.1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin: 0.3rem 0 0 0;
+        }
+
+        /* ---------- 底部链接 ---------- */
+        .footer-links {
+            background: #f1ece5;
+            padding: 1.8rem 1.5rem;
+            border-radius: 30px 30px 0 0;
+            margin-top: 0.8rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4d4239;
+        }
+
+        .footer-links a {
+            color: #5b4b39;
+            text-decoration: none;
+            border-bottom: 1px solid #b7a68c;
+        }
+
+        .footer-links a:hover {
+            color: #332a20;
+            border-bottom: 1px solid #7d6b53;
+        }
+
+        .footer-links .highlight-link {
+            font-weight: 500;
+            font-size: 1.05rem;
+            background: #fff9f0;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid #d6cabb;
+        }
+
+        /* ---------- 响应式 ---------- */
+        @media (max-width: 680px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 1.5rem 0.5rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 0.9rem;
+            }
+
+            .hero {
+                padding: 2rem 0.5rem 1.6rem 0.5rem;
+            }
+
+            .footer-links {
+                padding: 1.2rem 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0 0.6rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .notice-box {
+                padding: 0.9rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HERO 区 -->
+    <div class="hero">
+        <h1>极速赛车 · 简要指引</h1>
+        <div class="subline">从访问前准备到流畅浏览</div>
+        <p>无论你是第一次接触，还是希望更顺畅地使用，这份简明整理可以帮你更快理清思路。下面从几个常见角度出发，逐步展开。</p>
+    </div>
+
+    <!-- 优势区 / 特点 -->
+    <section>
+        <h2>为什么值得关注</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="num">01 — 界面与节奏</span>
+                <p>信息层级清晰，赛事动态、数据对照一目了然，不需要反复跳转就能把握整体赛况。</p>
+            </div>
+            <div class="feature-card">
+                <span class="num">02 — 访问友好度</span>
+                <p>针对不同网络环境做了基础优化，页面加载相对轻量，等待时间控制在合理范围内。</p>
+            </div>
+            <div class="feature-card">
+                <span class="num">03 — 内容更新习惯</span>
+                <p>保持稳定的内容更新频率，关键赛事、规则变动、实用提醒都能及时看到。</p>
+            </div>
+            <div class="feature-card">
+                <span class="num">04 — 兼容与阅读</span>
+                <p>在移动设备和桌面浏览器上均有良好表现，文本排版照顾阅读节奏，不堆砌广告。</p>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            “好的信息入口，往往不是花哨的，而是让人能快速找到需要的东西。”
+            <cite>—— 来自一位经常浏览赛车类站点的用户</cite>
+        </div>
+    </section>
+
+    <!-- 说明区 / 场景与提示 -->
+    <section>
+        <h2>使用场景与准备</h2>
+        <p>在访问之前，可以先留意下面几个小细节，它们能帮你节省时间，也避免一些常见困扰。</p>
+
+        <div class="notice-box">
+            <strong>🌐 网络与浏览器</strong><br>
+            建议使用 Chrome、Edge 或 Safari 较新版本，并保持网络稳定。如遇到页面加载缓慢，可尝试刷新或稍后再试，部分瞬时波动属于正常现象。
+        </div>
+
+        <div class="notice-box">
+            <strong>🔍 信息查找思路</strong><br>
+            如果想了解某个具体赛事或规则，可以直接使用页面内的搜索或导航分类。如果不确定从哪里开始，不妨先看看首页的更新摘要和置顶内容。
+        </div>
+
+        <p>另外，平台上的内容大多围绕赛事动态与基础规则展开，没有复杂的注册流程，也不需要下载额外软件。你只需要一个浏览器，就可以直接浏览。如果你对某个赛车项目感兴趣，可以留意对应版块的说明和时间表。</p>
+
+        <div class="notice-box" style="border-left-color: #9b856b;">
+            <strong>📌 一个小提醒</strong><br>
+            部分页面内容可能因维护或调整暂时不可见，这通常是短期的。可以隔半天再来查看，或者通过站内相关板块找到替代入口。
+        </div>
+    </section>
+
+    <!-- FAQ 摘要（4条） -->
+    <section>
+        <h2>常见疑问 · 摘要</h2>
+
+        <div class="faq-item">
+            <div class="q">Q：是否需要注册或登录才能浏览？</div>
+            <div class="a">绝大多数内容可以直接查看，不需要注册。只有少数互动功能（如评论、收藏）可能需要简单创建账户。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：页面上的数据更新频率如何？</div>
+            <div class="a">关键赛事和排行榜通常实时或准实时更新；资料类页面会根据赛季进度定期修订，一般滞后不超过两天。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：在手机上看排版会乱吗？</div>
+            <div class="a">已经适配了主流屏幕尺寸，文字和表格会自动调整。如果遇到显示异常，可以尝试横屏或更新浏览器。</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="q">Q：有没有推荐的访问时段？</div>
+            <div class="a">没有严格限制。不过根据多数用户的反馈，工作日上午和晚上八点到十点期间，访问速度和响应都较为理想。</div>
+        </div>
+
+        <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #62574d;">以上摘要基于站内帮助文档及用户常见反馈整理，更详细的内容可以在对应页面中找到。</p>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <p style="margin-bottom: 0.5rem;">如果你正在找那个熟悉的平台，这是最直接的出发点：</p>
+        <p style="margin: 0.2rem 0 0.8rem 0;">
+            <span class="highlight-link"><a href="https://cnwebs-speedracing.com">极速赛车</a></span>
+        </p>
+        <p style="font-size: 0.9rem; margin-top: 0.6rem; color: #6b5f53;">
+            — 保持简单，保持流畅 —
+        </p>
+        <p style="font-size: 0.88rem; margin-top: 1rem; border-top: 1px solid #d6cdbf; padding-top: 0.8rem; color: #736559;">
+            本页仅为指引摘要，不构成任何形式的保证或承诺。具体功能与内容以实际站点为准。
+        </p>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jenszlaghem.github.io/cnwebs-speedracing-com-2/sitemap.xml
